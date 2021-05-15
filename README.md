@@ -35,7 +35,7 @@ For a Live Demo, check : [https://arijit-drag-todo.herokuapp.com](https://arijit
 
 ## From the Developer:
 
-This is an Assesment Project, made on MERN Stack. After going through basics of MERN I needed some kind of full project to work on and gather some experience on Full Stack MERN Development on my own. So I decided to make a Contact App.
+This is an Assesment Project, made on MERN Stack. So I made this app as per the requirements and added a little extra.
 
 This is a Full Stack Web App just like any other To Do List Apps, where you can create a New Todo List Element, Drag the List Elements and Drop in different No. of Positions in the list, can select and deselect based on your need etc. (These were the requirements for the assesment).
 
