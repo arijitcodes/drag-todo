@@ -13,7 +13,10 @@ const About = () => {
         </div>
         <div className="ml-2 mt-3">
           <h5>Frontend:</h5>
-          <p>React, React Router Dom, Axios, React Beautiful DND</p>
+          <p>
+            React, React Hooks, React Router Dom, Axios, React Beautiful DND,
+            Bootstrap
+          </p>
         </div>
       </div>
       <div className="ml-2 d-flex flex-row align-items-center justify-content-start">

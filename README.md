@@ -27,7 +27,7 @@ For a Live Demo, check : [https://arijit-drag-todo.herokuapp.com](https://arijit
 
 `Stack` : MERN Stack (MongoDB, ExpressJS, ReactJS, NodeJS)
 
-`Technologies Used` : NodeJS, ExpressJS, MongoDB, Mongoose, ReactJS, React Hooks, React Router DOM, Axios, React Beautiful DND, Bootstrap etc.
+`Technologies Used` : NodeJS, ExpressJS, MongoDB, Mongoose, Dotenv, ReactJS, React Hooks, React Router DOM, Axios, React Beautiful DND, Bootstrap etc.
 
 `Functionalities` : REST Api, CRUD, Create, Read, Delete Todo List Elements, Fully Responsive Web Design using Bootstrap etc.
 
