@@ -74,7 +74,7 @@ const Home = () => {
                             className="btn btn-sm"
                             onClick={(e) => {
                               e.preventDefault();
-                              handleDelete(item._id);
+                              handleDelete(item._id, index);
                             }}
                           >
                             <i className="bi bi-trash text-danger" />
@@ -121,10 +121,13 @@ const Home = () => {
     // console.log(state);
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id, index) => {
     try {
       await axios.delete(`/api/todo/${id}`);
-      preload();
+      // preload();
+      const temp = Array.from(state);
+      temp.splice(index, 1);
+      setState(temp);
     } catch (error) {
       if (`Error! ${error.response.data.err}`) {
         alert(error.response.data.err);
@@ -174,17 +177,22 @@ const Home = () => {
       title: todo,
     };
     try {
-      await axios.post("/api/todo", temp);
+      const res = await axios.post("/api/todo", temp);
       setTodo("");
-      preload();
+      const tmp = Array.from(state);
+      tmp.push(res.data);
+      setState(tmp);
+      // preload();
     } catch (error) {
-      if (`Error! ${error.response.data.err}`) {
-        alert(error.response.data.err);
+      if (error.response.data && error.response.data.err) {
+        alert(`Error! ${error.response.data.err}`);
       } else {
+        console.log(error);
         alert(`Error ${error.response.status}: ${error.response.statusText}`);
       }
     }
   };
+
   return (
     <>
       <div className="container">
