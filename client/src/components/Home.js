@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import axios from "axios";
 
+// Components
+import Spinner from "./Spinner";
+
 const Home = () => {
   useEffect(() => {
     preload();
@@ -10,13 +13,17 @@ const Home = () => {
 
   const [state, setState] = useState([]);
   const [todo, setTodo] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const preload = async () => {
+    setLoading(true);
     try {
       const res = await axios.get("/api/todo");
       setState(res.data);
+      setLoading(false);
     } catch (error) {
       alert("Couldn't find any Todos! ");
+      setLoading(false);
     }
   };
 
@@ -201,7 +208,7 @@ const Home = () => {
           <span className="text-lowercase font-weight-normal">V1.0.1</span>
         </h1>
         {addNewTodoForm()}
-        {lists()}
+        {loading === true ? <Spinner /> : lists()}
       </div>
     </>
   );
