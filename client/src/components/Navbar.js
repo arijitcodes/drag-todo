@@ -37,7 +37,7 @@ const Navbar = () => {
           <li className="nav-item nav-link text-white d-none d-md-block">|</li>
           <li className="nav-item">
             <a
-              href="https://github.com/ArijitCodes"
+              href="https://github.com/arijitcodes/drag-todo"
               target="_blank"
               rel="noreferrer"
               className="nav-link text-white"
