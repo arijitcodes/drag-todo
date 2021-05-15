@@ -53,26 +53,27 @@ const Home = () => {
                         ref={provided.innerRef}
                       >
                         <div className="ms-2 me-auto">
-                          <span className="font-weight-bold mr-5">
-                            {item.title}
+                          <span className="ml-3 mr-2">
+                            <input
+                              type="checkbox"
+                              className="form-check-input"
+                              id={index}
+                              value={index}
+                              checked={item.selected}
+                              onChange={(e) => {
+                                const target = e.target.value;
+                                const val = state[target].selected;
+                                // console.log(val);
+                                let tmp = Array.from(state);
+                                tmp[target].selected = !val;
+                                // console.log(tmp[target]);
+                                setState(tmp);
+                                // console.log(state);
+                              }}
+                            />
                           </span>
-                          <input
-                            type="checkbox"
-                            className="form-check-input"
-                            id={index}
-                            value={index}
-                            checked={item.selected}
-                            onChange={(e) => {
-                              const target = e.target.value;
-                              const val = state[target].selected;
-                              // console.log(val);
-                              let tmp = Array.from(state);
-                              tmp[target].selected = !val;
-                              // console.log(tmp[target]);
-                              setState(tmp);
-                              // console.log(state);
-                            }}
-                          />
+
+                          <span className="font-weight-bold">{item.title}</span>
                         </div>
 
                         <span>
@@ -177,7 +178,9 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (todo === "" || todo === null) {
-      alert("Write something in the add new form first!");
+      alert(
+        "To add a New Todo item, please fill out the 'Add New Todo' field."
+      );
       return;
     }
     const temp = {
