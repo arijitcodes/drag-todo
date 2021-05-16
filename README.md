@@ -47,7 +47,7 @@ NOTE: This is a demo assesment project. There can be a lot of more features and 
 
 <div>
 <ol>
-    <li>To setup this project, clone it and run npm install.</li>
+    <li>To setup this project, clone it and run npm install in the main folder, as well as in the 'client' folder.</li>
     <li>Create a file named .env in the root.</li>
     <li>Add the following two Env Variables to be used in the app :
     <ul>
